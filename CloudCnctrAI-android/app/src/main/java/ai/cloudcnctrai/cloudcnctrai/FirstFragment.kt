@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import ai.cloudcnctrai.cloudcnctrai.databinding.FragmentFirstBinding
+import kotlinx.coroutines.delay
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -18,6 +19,8 @@ class FirstFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private val RESULT_1 = "Result_1"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +39,26 @@ class FirstFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
 
-        binding.buttonNetwork
+        binding.buttonNetwork.setOnClickListener{
+
+        }
+
+
+    }
+
+    private suspend fun fakeApiRequest() {
+        val result1 = getResultCryptosFromEndpoint()
+    }
+
+    private suspend fun getResultCryptosFromEndpoint(): String{
+        logThread("getResultCryptosFromEndpoint")
+        delay(1000)
+        Thread.sleep(1000)
+        return RESULT_1
+    }
+
+    private fun logThread(methodName: String){
+        println("TODO-FIXME-DEBUG : ${methodName} : ${Thread.currentThread().name}")
     }
 
     override fun onDestroyView() {
