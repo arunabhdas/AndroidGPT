@@ -7,7 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import ai.cloudcnctrai.cloudcnctrai.databinding.FragmentFirstBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -40,7 +45,10 @@ class FirstFragment : Fragment() {
         }
 
         binding.buttonNetwork.setOnClickListener{
-
+            // IO(Network, Local DB), Main(UI), Default(Heavy computational work)
+            CoroutineScope(IO).launch {
+                fakeApiRequest()
+            }
         }
 
 
@@ -48,6 +56,15 @@ class FirstFragment : Fragment() {
 
     private suspend fun fakeApiRequest() {
         val result1 = getResultCryptosFromEndpoint()
+        println("TODO-FIXME-DEBUG :  $result1")
+        setResultTextOnMainThread(result1)
+
+    }
+
+    private suspend fun setResultTextOnMainThread(inputString: String) {
+        withContext(Main) {
+            binding.textviewFirst.setText(binding.textviewFirst.text.toString() + "\n$inputString")
+        }
     }
 
     private suspend fun getResultCryptosFromEndpoint(): String{
