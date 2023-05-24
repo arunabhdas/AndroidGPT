@@ -1,7 +1,6 @@
 package ai.cloudcnctrai.cloudcnctrai
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
@@ -31,12 +30,9 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        AiModelsManager.addModel("GPT-4")
-        AiModelsManager.addModel("MPT-7B")
-        AiModelsManager.addModel("GPT-J-6B")
 
-        AiModelsServer.regionName = "New York"
-        AiModelsServer.regionCode = "NY"
+
+
 
     }
 

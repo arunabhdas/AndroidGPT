@@ -19,7 +19,7 @@ class SecondFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
+    var ordersList: MutableList<OrderItem> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,6 +32,14 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.buttonTax.setOnClickListener {
+            ordersList.add(OrderItem("Burger", 8.00))
+            ordersList.add(OrderItem("Fries", 4.00))
+            ordersList.add(OrderItem("Soda", 2.00))
+
+            binding.textviewSecond.setText(TaxCalculator.getTaxAmountForOrderItems(orderItemList = ordersList).toString())
+        }
 
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
