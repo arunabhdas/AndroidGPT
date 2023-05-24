@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">CloudCnctrAI</string>
+    <string name="app_name">AndroidGPT</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">CloudCnctrAI Welcome</string>
-    <string name="second_fragment_label">CloudCnctrAI Setup</string>
+    <string name="first_fragment_label">AndroidGPT Welcome</string>
+    <string name="second_fragment_label">AndroidGPT Setup</string>
     <string name="network_test">Network Test</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="welcome">Welcome to CloudCnctrAI</string>
-    <string name="getting_started">Getting Started with CloudCnctrAI</string>
+    <string name="welcome">Welcome to AndroidGPT</string>
+    <string name="getting_started">Getting Started with AndroidGPT</string>
 </resources>

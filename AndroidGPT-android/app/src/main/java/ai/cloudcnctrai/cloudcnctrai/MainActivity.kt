@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import ai.cloudcnctrai.cloudcnctrai.databinding.ActivityMainBinding
+import ai.openlibre.openlibreai.AiModelsManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,7 +31,9 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-
+        AiModelsManager.addModel("GPT-4")
+        AiModelsManager.addModel("MPT-7B")
+        AiModelsManager.addModel("GPT-J-6B")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

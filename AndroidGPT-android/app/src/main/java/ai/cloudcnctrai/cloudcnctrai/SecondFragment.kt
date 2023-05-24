@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import ai.cloudcnctrai.cloudcnctrai.databinding.FragmentSecondBinding
+import ai.openlibre.openlibreai.AiModelsManager
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -35,6 +36,8 @@ class SecondFragment : Fragment() {
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
+
+        AiModelsManager.addModel("GPT-J-6B")
     }
 
     override fun onDestroyView() {
