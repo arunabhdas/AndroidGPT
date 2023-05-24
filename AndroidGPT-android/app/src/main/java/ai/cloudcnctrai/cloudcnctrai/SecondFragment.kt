@@ -37,6 +37,7 @@ class SecondFragment : Fragment() {
             ordersList.add(OrderItem("Burger", 8.00))
             ordersList.add(OrderItem("Fries", 4.00))
             ordersList.add(OrderItem("Soda", 2.00))
+            ordersList.add(OrderItem("Ice Cream", 4.00))
 
             binding.textviewSecond.setText(TaxCalculator.getTaxAmountForOrderItems(orderItemList = ordersList).toString())
         }
