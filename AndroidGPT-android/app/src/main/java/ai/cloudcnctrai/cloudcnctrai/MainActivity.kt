@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         AiModelsManager.addModel("GPT-4")
         AiModelsManager.addModel("MPT-7B")
         AiModelsManager.addModel("GPT-J-6B")
+
+        AiModelsServer.regionName = "New York"
+        AiModelsServer.regionCode = "NY"
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
