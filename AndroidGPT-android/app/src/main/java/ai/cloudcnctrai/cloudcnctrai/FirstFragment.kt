@@ -46,9 +46,11 @@ class FirstFragment : Fragment() {
 
         binding.buttonNetwork.setOnClickListener{
             // IO(Network, Local DB), Main(UI), Default(Heavy computational work)
+            /* TODO-FIXME-CLEANUP
             CoroutineScope(IO).launch {
                 fakeApiRequest()
             }
+            */
         }
 
 
