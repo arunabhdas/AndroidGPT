@@ -113,7 +113,7 @@ fun GreetingSection(
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Unicorn CRM  $name",
+                text = "Android GPT  $name",
                 color = Color.White,
                 style = MaterialTheme.typography.h2
             )

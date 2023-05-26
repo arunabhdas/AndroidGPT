@@ -29,7 +29,7 @@ sealed class BottomBarScreen(
 
     object TabTwoScreen: BottomBarScreen(
         route = "two",
-        title = "Portfolio",
+        title = "Games",
         iconId = R.drawable.ic_bubble
 
     )

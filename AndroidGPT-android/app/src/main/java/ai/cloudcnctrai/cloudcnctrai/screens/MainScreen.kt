@@ -20,6 +20,7 @@ import androidx.compose.material.LocalContentColor
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 
@@ -93,4 +94,10 @@ fun RowScope.AddItem(
             navController.navigate(screen.route)
         }
     )
+}
+
+@Composable
+@Preview
+fun MainScreenPreview() {
+    MainScreen("Main", rememberNavController())
 }
