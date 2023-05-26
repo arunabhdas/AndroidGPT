@@ -8,17 +8,19 @@ import ai.cloudcnctrai.cloudcnctrai.games.repo.GameRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.scopes.ViewModelScoped
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ViewModelComponent::class)
 object AppModule {
 
-    @Singleton
     @Provides
+    @ViewModelScoped
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
@@ -27,28 +29,28 @@ object AppModule {
     }
 
 
-    @Singleton
     @Provides
+    @ViewModelScoped
     fun provideGameApi(retrofit: Retrofit): GameApi {
         return retrofit.create(GameApi::class.java)
     }
 
-    @Singleton
     @Provides
+    @ViewModelScoped
     fun provideGameService(gameApi: GameApi): GameService {
         return GameService(gameApi)  // Or however you create an instance of GameService
     }
 
 
-    @Singleton
     @Provides
+    @ViewModelScoped
     fun provideGameRepository(gameService: GameService): GameRepository {
         return GameRepository(gameService)  // Or however you create an instance of GameRepository
     }
 
-    @Singleton
     @Provides
-    fun provideGetGamesUseCase(gameRepository: GameRepository): GetGamesUseCase {
+    @ViewModelScoped
+    fun provideGamesUseCase(gameRepository: GameRepository): GetGamesUseCase {
         return GetGamesUseCase(gameRepository)  // Or however you create an instance of GetGamesUseCase
     }
 }

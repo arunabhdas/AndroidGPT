@@ -28,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 
@@ -36,8 +37,9 @@ import coil.compose.rememberImagePainter
  */
 
 @Composable
-fun TabTwoScreen() {
-    val mainViewModel = viewModel(modelClass = MainViewModel::class.java)
+fun TabTwoScreen(
+    mainViewModel: MainViewModel = hiltViewModel()
+) {
     val games by mainViewModel.games.collectAsState()
     Box(
         modifier = Modifier
@@ -69,7 +71,9 @@ fun GameCard(gameItem: GameItem) {
                 painter = image,
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxWidth().height(250.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(250.dp)
             )
 
             Column(modifier = Modifier.padding(10.dp)) {
