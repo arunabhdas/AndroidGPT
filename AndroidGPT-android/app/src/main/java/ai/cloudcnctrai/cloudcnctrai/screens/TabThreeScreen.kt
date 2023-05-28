@@ -22,7 +22,7 @@ fun TabThreeScreen() {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "Settings",
+            text = "Products",
             fontSize = MaterialTheme.typography.h3.fontSize,
             fontWeight = FontWeight.Bold,
             color = Color.White
