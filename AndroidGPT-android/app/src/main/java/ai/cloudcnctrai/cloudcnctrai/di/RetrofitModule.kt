@@ -2,9 +2,13 @@ package ai.cloudcnctrai.cloudcnctrai.di
 
 import ai.cloudcnctrai.cloudcnctrai.network.common.Constants
 import ai.cloudcnctrai.cloudcnctrai.network.data.GameService
+import ai.cloudcnctrai.cloudcnctrai.network.data.ProductApi
+import ai.cloudcnctrai.cloudcnctrai.network.data.ProductService
 import ai.cloudcnctrai.cloudcnctrai.network.domain.GetGamesUseCase
+import ai.cloudcnctrai.cloudcnctrai.network.domain.GetProductsUseCase
 import ai.cloudcnctrai.cloudcnctrai.network.network.data.GameApi
 import ai.cloudcnctrai.cloudcnctrai.network.repo.GameRepository
+import ai.cloudcnctrai.cloudcnctrai.network.repo.ProductRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,7 +30,7 @@ object RetrofitModule {
             .build()
     }
 
-
+    // Games
     @Provides
     @ViewModelScoped
     fun provideGameApi(retrofit: Retrofit): GameApi {
@@ -51,4 +55,32 @@ object RetrofitModule {
     fun provideGamesUseCase(gameRepository: GameRepository): GetGamesUseCase {
         return GetGamesUseCase(gameRepository)  // Or however you create an instance of GetGamesUseCase
     }
+
+    // Products
+    @Provides
+    @ViewModelScoped
+    fun provideProductApi(retrofit: Retrofit): ProductApi {
+        return retrofit.create(ProductApi::class.java)
+    }
+
+
+    @Provides
+    @ViewModelScoped
+    fun provideProductService(productApi: ProductApi): ProductService {
+        return ProductService(productApi)
+    }
+
+
+    @Provides
+    @ViewModelScoped
+    fun provideProductRepository(productService: ProductService): ProductRepository {
+        return ProductRepository(productService)
+    }
+
+    @Provides
+    @ViewModelScoped
+    fun provideProductsUseCase(productRepository: ProductRepository): GetProductsUseCase {
+        return GetProductsUseCase(productRepository)
+    }
+
 }
