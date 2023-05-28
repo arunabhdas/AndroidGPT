@@ -1,7 +1,7 @@
-package ai.cloudcnctrai.cloudcnctrai.games.data
+package ai.cloudcnctrai.cloudcnctrai.network.data
 
-import ai.cloudcnctrai.cloudcnctrai.games.data.model.GameModel
-import ai.cloudcnctrai.cloudcnctrai.games.network.data.GameApi
+import ai.cloudcnctrai.cloudcnctrai.network.data.model.GameModel
+import ai.cloudcnctrai.cloudcnctrai.network.network.data.GameApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

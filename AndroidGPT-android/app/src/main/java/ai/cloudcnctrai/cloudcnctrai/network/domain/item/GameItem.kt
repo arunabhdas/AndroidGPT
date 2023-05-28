@@ -1,6 +1,6 @@
-package ai.cloudcnctrai.cloudcnctrai.games.domain.item
+package ai.cloudcnctrai.cloudcnctrai.network.domain.item
 
-import ai.cloudcnctrai.cloudcnctrai.games.data.model.GameModel
+import ai.cloudcnctrai.cloudcnctrai.network.data.model.GameModel
 
 data class GameItem (
     val id: Int,

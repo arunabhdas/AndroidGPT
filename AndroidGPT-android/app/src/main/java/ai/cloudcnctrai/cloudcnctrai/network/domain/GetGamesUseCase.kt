@@ -1,7 +1,7 @@
-package ai.cloudcnctrai.cloudcnctrai.games.domain
+package ai.cloudcnctrai.cloudcnctrai.network.domain
 
-import ai.cloudcnctrai.cloudcnctrai.games.domain.item.GameItem
-import ai.cloudcnctrai.cloudcnctrai.games.repo.GameRepository
+import ai.cloudcnctrai.cloudcnctrai.network.domain.item.GameItem
+import ai.cloudcnctrai.cloudcnctrai.network.repo.GameRepository
 import javax.inject.Inject
 
 class GetGamesUseCase @Inject constructor(

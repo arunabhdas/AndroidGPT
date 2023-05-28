@@ -1,4 +1,4 @@
-package ai.cloudcnctrai.cloudcnctrai.games.data.model
+package ai.cloudcnctrai.cloudcnctrai.network.data.model
 
 data class GameModel(
     val id: Int,

@@ -1,4 +1,4 @@
-package ai.cloudcnctrai.cloudcnctrai.games.common
+package ai.cloudcnctrai.cloudcnctrai.network.common
 
 class Constants {
     companion object {

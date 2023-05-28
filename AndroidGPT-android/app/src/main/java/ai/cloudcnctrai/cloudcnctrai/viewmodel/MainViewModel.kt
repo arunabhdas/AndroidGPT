@@ -1,7 +1,7 @@
 package ai.cloudcnctrai.cloudcnctrai.viewmodel
 
-import ai.cloudcnctrai.cloudcnctrai.games.domain.GetGamesUseCase
-import ai.cloudcnctrai.cloudcnctrai.games.domain.item.GameItem
+import ai.cloudcnctrai.cloudcnctrai.network.domain.GetGamesUseCase
+import ai.cloudcnctrai.cloudcnctrai.network.domain.item.GameItem
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope

@@ -1,10 +1,10 @@
 package ai.cloudcnctrai.cloudcnctrai.di
 
-import ai.cloudcnctrai.cloudcnctrai.games.common.Constants
-import ai.cloudcnctrai.cloudcnctrai.games.data.GameService
-import ai.cloudcnctrai.cloudcnctrai.games.domain.GetGamesUseCase
-import ai.cloudcnctrai.cloudcnctrai.games.network.data.GameApi
-import ai.cloudcnctrai.cloudcnctrai.games.repo.GameRepository
+import ai.cloudcnctrai.cloudcnctrai.network.common.Constants
+import ai.cloudcnctrai.cloudcnctrai.network.data.GameService
+import ai.cloudcnctrai.cloudcnctrai.network.domain.GetGamesUseCase
+import ai.cloudcnctrai.cloudcnctrai.network.network.data.GameApi
+import ai.cloudcnctrai.cloudcnctrai.network.repo.GameRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
