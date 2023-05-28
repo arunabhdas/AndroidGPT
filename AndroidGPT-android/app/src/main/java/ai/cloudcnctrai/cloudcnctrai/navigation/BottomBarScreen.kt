@@ -36,7 +36,7 @@ sealed class BottomBarScreen(
 
     object TabThreeScreen: BottomBarScreen(
         route = "three",
-        title = "Settings",
+        title = "Products",
         iconId = R.drawable.ic_bubble
     )
 
