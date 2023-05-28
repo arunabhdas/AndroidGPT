@@ -30,7 +30,6 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        // TODO-FIXME-CLEANUP jvmTarget = '1.8'
         jvmTarget = '17'
     }
     buildFeatures {
