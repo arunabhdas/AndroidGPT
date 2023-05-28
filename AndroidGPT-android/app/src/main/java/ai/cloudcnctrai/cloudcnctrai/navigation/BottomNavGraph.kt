@@ -1,5 +1,6 @@
 package ai.cloudcnctrai.cloudcnctrai.navigation
 
+import ai.cloudcnctrai.cloudcnctrai.screens.TabFourScreen
 import ai.cloudcnctrai.cloudcnctrai.screens.TabOneScreen
 import ai.cloudcnctrai.cloudcnctrai.screens.TabThreeScreen
 import ai.cloudcnctrai.cloudcnctrai.screens.TabTwoScreen
@@ -33,6 +34,9 @@ fun BottomNavGraph(
             TabThreeScreen()
         }
 
+        composable(route = BottomBarScreen.TabFourScreen.route) {
+            TabFourScreen()
+        }
 
 
         composable(

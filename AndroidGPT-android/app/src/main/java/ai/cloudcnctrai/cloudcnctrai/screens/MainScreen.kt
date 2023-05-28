@@ -50,7 +50,7 @@ fun BottomBar(navController: NavHostController) {
         BottomBarScreen.TabOneScreen,
         BottomBarScreen.TabTwoScreen,
         BottomBarScreen.TabThreeScreen,
-        BottomBarScreen.CryptoListScreen
+        BottomBarScreen.TabFourScreen
 
     )
 
